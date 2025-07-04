@@ -34,3 +34,19 @@ sudo install -d /home/custompkgs -o $USER
 repo-add /home/custompkgs/custom.db.tar
 ```
 
+We can test adding a package - let's add aurutils!
+
+```
+sudo pacman -Syu
+aur sync aurutils
+sudo pacman -S aurutils
+```
+
+# Using aurutils to install xrdp
+
+```
+aur sync xrdp xorgxrdp
+sudo pacman _s xrdp xorgxrdp
+
+sudo systemctl enable --now xrdp xrdp-sesman
+```
