@@ -21,4 +21,5 @@ sudo pacman -S --noconfirm \
 	remmina \
 	freerdp \
 	xdg-utils \
+	openssh \
 ;
