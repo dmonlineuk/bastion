@@ -19,4 +19,5 @@ sudo pacman -S --noconfirm \
 	ufw \
 	ghostty \
 	remmina \
+	freerdp \
 ;
