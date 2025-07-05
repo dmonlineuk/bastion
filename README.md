@@ -44,9 +44,13 @@ sudo pacman -S aurutils
 
 # Using aurutils to install xrdp
 
+This isn't as simple as this readme will make it out. There
+are some files that need adding such as /etc/X11/Xwrapper.config
+and ~/.xinitrc (?)
+
 ```
 aur sync xrdp xorgxrdp
-sudo pacman _s xrdp xorgxrdp
+sudo pacman -s xrdp xorgxrdp
 
 sudo systemctl enable --now xrdp xrdp-sesman
 ```
