@@ -5,15 +5,12 @@
 sudo pacman -Syu;
 
 sudo pacman -S \
-	git \
-	openssh \
 	pass \
 	firefox \
 	pacutils \
 	perl-json-xs \
 	vifm \
 	vim \
-	nano \
 	curl \
 	gnupg \
 	xorg \
