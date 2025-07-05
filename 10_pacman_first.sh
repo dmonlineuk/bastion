@@ -18,4 +18,5 @@ sudo pacman -S --noconfirm \
 	xfce4-goodies \
 	ufw \
 	ghostty \
+	remmina \
 ;
