@@ -1,0 +1,8 @@
+#!/bin/bash
+files=$(ls *.sh);
+
+for file in $files;
+do
+  . $file
+done
+
