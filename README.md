@@ -1,56 +1,30 @@
-# bastion
+# Bastion
 
-Plan here is to have xrdp up and running. openssh is optional, but isn't going to be exposed
-publicly.
+Purpose is to come up with repeatable scripts that can ne used
+whenever we need / want to recreate our bastion vm
 
-First steps will have to be ensuring we can use the AUR - preference is to use aurutils.
+## First Steps
 
-# Installing aurutils
+This repo is expected to be pulled onto a freshly installed minimal
+install of arch linux. Ensure git is available.
 
-First install requires building from source, depends on git, vifm, pacutils and perl-json-xs.
+Clone the repo:
+`git clone https://github.com/dmonline.uk/bastion`
 
-```
-sudo pacman -S git, pacutils, perl-json-xs vifm
+## Use of repo
 
-cd ~/projects
-git clone https://aur.archlinux.org/aurutils.git
-cd aurutils
-makepkg -si
-```
+The scripts can be run individually, or as a batch. Note these wrappers:
 
-# Setting up aurutils
+* runme - this will run all scripts with the extension '.sh' in alpha-numeric order
+* runme_test - this will print out the scripts without running them
 
-Need to enable the "custom" repo:
+Any scripts can be removed from the batch process by having the extension renamed.
+Any _other_ extension will do, but '.txt' is chosen.
 
-```
-sudo nano /etc/pacman.conf
-# Uncommment [custom] section and take note of path to repo
-```
+Any script can be 'sourced' manually:
 
-Create and add repo
+* `source 10_run_first.sh`
+or
+* `. 25_ignored.txt`
 
-```
-sudo install -d /home/custompkgs -o $USER
-repo-add /home/custompkgs/custom.db.tar
-```
 
-We can test adding a package - let's add aurutils!
-
-```
-sudo pacman -Syu
-aur sync aurutils
-sudo pacman -S aurutils
-```
-
-# Using aurutils to install xrdp
-
-This isn't as simple as this readme will make it out. There
-are some files that need adding such as /etc/X11/Xwrapper.config
-and ~/.xinitrc (?)
-
-```
-aur sync xrdp xorgxrdp
-sudo pacman -s xrdp xorgxrdp
-
-sudo systemctl enable --now xrdp xrdp-sesman
-```
