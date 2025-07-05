@@ -20,4 +20,5 @@ sudo pacman -S --noconfirm \
 	ghostty \
 	remmina \
 	freerdp \
+	xdg-utils \
 ;
