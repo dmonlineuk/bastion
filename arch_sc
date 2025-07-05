@@ -15,7 +15,11 @@ sudo pacman -S \
 	vim \
 	nano \
 	curl \
-	gnupg \	
+	gnupg \
+	xorg \
+	xfce4 \
+	xfce4-goodies \
+	ufw \
 ;
 
 # gcm and other git-specific settings
