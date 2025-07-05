@@ -4,7 +4,7 @@
 
 sudo pacman -Syu;
 
-sudo pacman -S \
+sudo pacman -S --noconfirm \
 	pass \
 	firefox \
 	pacutils \
@@ -17,4 +17,5 @@ sudo pacman -S \
 	xfce4 \
 	xfce4-goodies \
 	ufw \
+	ghostty \
 ;

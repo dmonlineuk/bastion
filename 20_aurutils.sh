@@ -7,7 +7,7 @@
 
 mkdir -p ~/projects/
 cd ~/projects/
-git clone https://aur.archlinux.org/aurutils.git#
+git clone https://aur.archlinux.org/aurutils.git
 cd ~/projects/aurutils/
 makepkg -si
 
@@ -15,7 +15,7 @@ makepkg -si
 # the lines may already exist as commented out <shrug>
 echo [custom] | sudo tee -a /etc/pacman.conf
 echo "SigLevel = Optional TrustAll" | sudo tee -a /etc/pacman.conf
-echo "file:///home/custompkgs" | sudo tee -a /etc/pacman.conf
+echo "Server = file:///home/custompkgs" | sudo tee -a /etc/pacman.conf
 
 # Create and add the repo
 sudo install -d /home/custompkgs -o $USER
@@ -27,4 +27,5 @@ aur sync aurutils
 sudo pacman -S aurutils
 
 # Can now drop aurutils project
+cd ~/projects/bastion/
 rm -rf ~/projects/aurutils/
